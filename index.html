@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>脑中风预防指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 10px 30px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        
+        h2 {
+            color: #1e5799;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f7ff;
+        }
+        
+        h3 {
+            color: #207cca;
+            font-size: 18px;
+            margin: 15px 0 10px;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .warning {
+            background-color: #fff8e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        
+        .tip {
+            background-color: #e8f4ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e8f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: #1e5799;
+            font-weight: bold;
+        }
+        
+        .risk-factors {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .risk-item {
+            background: #f8fbff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .risk-item.high {
+            border-left-color: #f44336;
+        }
+        
+        .risk-item.medium {
+            border-left-color: #FF9800;
+        }
+        
+        .emergency-signs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .sign-item {
+            width: calc(50% - 8px);
+            background: #fff3e0;
+            padding: 15px 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .sign-item:nth-child(odd) {
+            background: #f1f8e9;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .button {
+            display: block;
+            width: 100%;
+            background: #1e5799;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(30, 87, 153, 0.2);
+        }
+        
+        .button:hover {
+            background: #154273;
+        }
+        
+        @media (max-width: 600px) {
+            .risk-factors {
+                grid-template-columns: 1fr;
+            }
+            
+            .sign-item {
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>脑中风预防健康指南</h1>
+            <p class="subtitle">了解风险，掌握预防，健康生活</p>
+        </div>
+        
+        <div class="card">
+            <div class="section-title">
+                <div class="icon">!</div>
+                <h2>什么是脑中风？</h2>
+            </div>
+            <p>脑中风（卒中）是由于脑部血管突然破裂或因血管阻塞导致血液不能流入大脑而引起脑组织损伤的一组疾病。中风具有高发病率、高致残率、高死亡率、高复发率和高经济负担"五高"特点。</p>
+        </div>
+        
+        <div class="card">
+            <div class="section-title">
+                <div class="icon">⚠</div>
+                <h2>中风危险因素</h2>
+            </div>
+            <p>识别并控制以下危险因素可显著降低中风风险：</p>
+            <div class="risk-factors">
+                <div class="risk-item high">
+                    <h3>高血压</h3>
+                    <p>中风最重要的可干预危险因素，控制血压可降低30-40%中风风险</p>
+                </div>
+                <div class="risk-item high">
+                    <h3>糖尿病</h3>
+                    <p>增加中风风险2-4倍，严格控制血糖至关重要</p>
+                </div>
+                <div class="risk-item medium">
+                    <h3>高血脂</h3>
+                    <p>胆固醇过高易形成动脉粥样硬化，堵塞脑血管</p>
+                </div>
+                <div class="risk-item medium">
+                    <h3>吸烟饮酒</h3>
+                    <p>吸烟者中风风险是不吸烟者的2-4倍，过量饮酒增加风险</p>
+                </div>
+                <div class="risk-item high">
+                    <h3>心房颤动</h3>
+                    <p>导致心源性脑栓塞的主要原因，需抗凝治疗</p>
+                </div>
+                <div class="risk-item medium">
+                    <h3>缺乏运动</h3>
+                    <p>每周至少150分钟中等强度有氧运动可显著降低风险</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="section-title">
+                <div class="icon">🛡</div>
+                <h2>中风预防措施</h2>
+            </div>
+            <div class="tip">
+                <strong>健康生活方式是预防中风的基础</strong>
+            </div>
+            <h3>1. 控制血压</h3>
+            <ul>
+                <li>定期监测血压，保持血压＜140/90 mmHg</li>
+                <li>限制钠盐摄入，每日食盐＜5克</li>
+                <li>遵医嘱坚持服用降压药物</li>
+            </ul>
+            
+            <h3>2. 健康饮食</h3>
+            <ul>
+                <li>多吃蔬菜、水果、全谷物</li>
+                <li>选择低脂乳制品、家禽、鱼、豆类和坚果</li>
+                <li>限制红肉、甜食和含糖饮料</li>
+            </ul>
+            
+            <h3>3. 规律运动</h3>
+            <ul>
+                <li>每周至少150分钟中等强度有氧运动</li>
+                <li>或75分钟高强度有氧运动</li>
+                <li>增加日常活动，减少久坐</li>
+            </ul>
+            
+            <h3>4. 戒烟限酒</h3>
+            <ul>
+                <li>彻底戒烟，避免二手烟</li>
+                <li>限制酒精摄入，男性每日≤25克，女性≤15克</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <div class="section-title">
+                <div class="icon">🚨</div>
+                <h2>中风识别与急救</h2>
+            </div>
+            <div class="warning">
+                <strong>牢记"中风120"识别口诀：</strong><br>
+                1看(1张脸)：脸不对称，口角歪斜<br>
+                2查(2只胳膊)：平行举起，单侧无力<br>
+                0听(聆听语言)：言语不清，表达困难
+            </div>
+            
+            <h3>其他常见中风症状：</h3>
+            <div class="emergency-signs">
+                <div class="sign-item">突发剧烈头痛</div>
+                <div class="sign-item">单眼或双眼视力模糊</div>
+                <div class="sign-item">行走困难，失去平衡</div>
+                <div class="sign-item">不明原因眩晕</div>
+                <div class="sign-item">意识障碍或抽搐</div>
+                <div class="sign-item">吞咽困难</div>
+            </div>
+            
+            <h3>急救步骤：</h3>
+            <ol>
+                <li>立即拨打急救电话120</li>
+                <li>记录发病时间，这对后续治疗至关重要</li>
+                <li>让患者平卧，头偏向一侧，保持呼吸道通畅</li>
+                <li>不要随意给患者喂水、喂药</li>
+                <li>等待救护车，不要自行驾车送医</li>
+            </ol>
+        </div>
+        
+        <a href="javascript:void(0);" class="button" onclick="showReminder()">设置健康提醒</a>
+        
+        <div class="card">
+            <div class="section-title">
+                <div class="icon">📅</div>
+                <h2>定期健康检查建议</h2>
+            </div>
+            <ul>
+                <li><strong>40岁以上人群：</strong>每年至少测量1次血压、血糖、血脂</li>
+                <li><strong>高血压患者：</strong>每天测量血压，定期复查</li>
+                <li><strong>糖尿病患者：</strong>每3个月检查1次糖化血红蛋白</li>
+                <li><strong>高血脂患者：</strong>每3-6个月复查血脂</li>
+                <li><strong>有中风家族史者：</strong>定期进行颈动脉超声检查</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>本信息仅供参考，不能替代专业医疗建议</p>
+            <p>如有健康问题，请及时咨询医生或专业医疗机构</p>
+            <p>预防脑中风，从健康生活开始！</p>
+        </div>
+    </div>
+    
+    <script>
+        function showReminder() {
+            alert("健康提醒已设置！\n\n建议：\n1. 每天测量血压（如有高血压）\n2. 每周至少运动3次\n3. 每月检查一次饮食记录\n4. 每年进行健康体检\n\n健康是最大的财富，请坚持健康生活方式！");
+        }
+        
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                    setTimeout(() => {
+                        this.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.08)';
+                    }, 300);
+                });
+            });
+            
+            // 风险因素高亮
+            const highRiskItems = document.querySelectorAll('.risk-item.high');
+            highRiskItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    alert("这是高风险因素，需要特别关注并积极控制！");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
